@@ -29,7 +29,7 @@ li button {
   cursor: pointer;
 }
 
-li.priority.high {
+li.high {
   border: 2px solid #1a681e;
   color: #1a681e;
 }
