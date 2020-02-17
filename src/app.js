@@ -5,15 +5,18 @@ document.addEventListener('DOMContentLoaded', () => {
     el: "#app",
     data: {
       items: [
-        {name: "Buy Food", isComplete: true},
-        {name: "Clean House", isComplete: false},
-        {name: "Book Holiday", isComplete: true }
-      ]
+        {name: "Buy Food", priority: "high", isComplete: true},
+        {name: "Clean House", priority: "low", isComplete: false},
+        {name: "Book Holiday", priority: "high", isComplete: true }
+      ],
+      newItem: ""
     },
     methods: {
       saveNewItem: function() {
+        console.log(this.priority);
         this.items.push({
           name: this.newItem,
+          priority: this.priority,
           isComplete: false
         });
         this.newItem = "";

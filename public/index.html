@@ -13,14 +13,29 @@
 <body>
   <div id="app">
     <ul>
-      <li v-for="(item, index) in items">
-        <!-- v-bind:class="item.isComplete ? 'complete' : 'not-complete'"-->
-        <!-- > -->
+      <li v-for="(item, index) in items"
+        v-bind:class="item.priority ? 'high' : 'low'">
           <span>  {{ item.name }} </span>
+          <span> {{ item.priority}} </span>
           <span v-if="item.isComplete"> Completed ✅</span>
           <button v-if="!item.isComplete" v-on:click="completeItem(index)"> Complete </button>
       </li>
     </ul>
+    <form v-on:submit.prevent="saveNewItem">
+      <label for="new item">Add a new To Do item: </label>
+      <input id="new-item" type="text" v-model="newItem"/>
+
+      <div class="form-item">
+      <label for="priority">Priority:</label>
+
+      <label for="high">high</label>
+      <input type="radio" name="priority" id="high" value="high"/>
+
+      <label for="low">Low</label>
+      <input type="radio" name="priority" id="low" value="low"/>
+
+      <input type="submit" value="Save new item"/>
+    </form>
   </div>
 </body>
 </html>
