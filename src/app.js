@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     methods: {
       saveNewItem: function() {
-        console.log(this.priority);
         this.items.push({
           name: this.newItem,
           priority: this.newPriority,
