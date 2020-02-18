@@ -9,14 +9,15 @@ document.addEventListener('DOMContentLoaded', () => {
         {name: "Clean House", priority: "low", isComplete: false},
         {name: "Book Holiday", priority: "high", isComplete: true }
       ],
-      newItem: ""
+      newItem: "",
+      newPriority: ""
     },
     methods: {
       saveNewItem: function() {
         console.log(this.priority);
         this.items.push({
           name: this.newItem,
-          priority: this.priority,
+          priority: this.newPriority,
           isComplete: false
         });
         this.newItem = "";
